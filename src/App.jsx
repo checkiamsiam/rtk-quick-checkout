@@ -27,7 +27,7 @@ function App() {
   // besics of mutation
   // all mutation process is same
 
-  const [createUser, { isUninitialized, isError, isLoading, isSuccess, data }] = useCreateUserMutation();
+  const [createUser, { isUninitialized : mutaionUninit, isError : mutationIsError, isLoading : isMutationLoading, isSuccess : IsmutationSuccess, data : mutationResponse }] = useCreateUserMutation();
 
   const handleCreateUser = async () => {
     await createUser({ name: "ali", age: 20 });

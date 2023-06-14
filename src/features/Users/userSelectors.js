@@ -6,3 +6,18 @@ export const getUser = (state) => state.user.users;
 // createSelector is use for memoization
 
 export const getUserSelector = createSelector(getUser, (users) => users);
+
+// best cases for memoization
+
+// export const getUserSelector = createSelector(
+//   (state) => state.user.token,
+//   (users) => users,
+// );
+// or
+//  export const selectHomeCategories = createSelector(
+//   (state) => state.user,
+//   (user) => {
+//     const admin = user.filter((item) => item.name === "Admin");
+//     return homeCategories;
+//   }
+// );
