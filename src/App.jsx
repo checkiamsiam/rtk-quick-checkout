@@ -1,6 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import "./App.css";
 import { useCreateUserMutation, useGetSingleUsersQuery } from "./features/Users/userApi";
 import { getUserSelector } from "./features/Users/userSelectors";
 import { setUser } from "./features/Users/userSlice";
@@ -27,7 +25,10 @@ function App() {
   // besics of mutation
   // all mutation process is same
 
-  const [createUser, { isUninitialized : mutaionUninit, isError : mutationIsError, isLoading : isMutationLoading, isSuccess : IsmutationSuccess, data : mutationResponse }] = useCreateUserMutation();
+  const [
+    createUser,
+    { isUninitialized: mutaionUninit, isError: mutationIsError, isLoading: isMutationLoading, isSuccess: IsmutationSuccess, data: mutationResponse },
+  ] = useCreateUserMutation();
 
   const handleCreateUser = async () => {
     await createUser({ name: "ali", age: 20 });
@@ -36,10 +37,7 @@ function App() {
   return (
     <>
       <h1>Rtk + React</h1>
-      <div className="card">nothing in there. this is just a codebase to memorize redux concepts</div>
-      <Link to="/users" className="read-the-docs">
-        Click here to see user
-      </Link>
+      <h3>nothing in there. this is just a codebase to memorize redux concepts</h3>
     </>
   );
 }
